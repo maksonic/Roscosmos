@@ -13,4 +13,11 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Roscosmos"
-include ':app'
+include (":app")
+include (":core")
+include (":data")
+include (":domain")
+include (":screen:main")
+include(":shared:ui")
+include(":navigation:api")
+include(":navigation:impl")
