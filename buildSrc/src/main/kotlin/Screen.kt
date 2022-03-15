@@ -4,5 +4,6 @@
 object Screen {
 
     const val MAIN = ":screen:main"
+    const val SETTINGS = ":screen:settings"
 
 }

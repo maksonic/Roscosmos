@@ -51,8 +51,11 @@ android {
 dependencies {
 
     implementation(project(Module.CORE))
-    implementation(project(Screen.MAIN))
+    implementation(project(Module.Navigation.API))
+    implementation(project(Module.Navigation.IMPL))
     implementation(project(Module.Shared.UI))
+    implementation(project(Screen.MAIN))
+    implementation(project(Screen.SETTINGS))
     implementation(Lib.Accompanist.NAVIGATION_MATERIAL)
     implementation(Lib.Accompanist.SYSTEM_UI)
     implementation(Lib.AndroidX.APP_COMPAT)

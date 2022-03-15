@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_toolbar_settings">Настройки</string>
+    <string name="header_theme">Оформление</string>
+    <string name="item_select_theme">Выбрать тему</string>
+    <string name="popup_sys_theme">Системная тема</string>
+    <string name="popup_light_theme">Светлая тема</string>
+    <string name="popup_dark_theme">Тёмная тема</string>
+    <string name="popup_rc_theme">Фирменная тема</string>
+    <string name="item_change_font_size">Изменить размер текста</string>
+
+    <string name="header_notification">Уведомления</string>
+    <string name="item_notification_live">Прямые трансляции</string>
+    <string name="item_notification_news">Новости</string>
+
+
+</resources>
