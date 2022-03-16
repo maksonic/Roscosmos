@@ -14,6 +14,7 @@ object Lib {
     object Accompanist {
         private const val version = "0.24.3-alpha"
         const val PAGER = "com.google.accompanist:accompanist-pager:$version"
+        const val NAVIGATION_ANIMATION = "com.google.accompanist:accompanist-navigation-animation:$version"
         const val NAVIGATION_MATERIAL = "com.google.accompanist:accompanist-navigation-material:$version"
         const val SYSTEM_UI = "com.google.accompanist:accompanist-systemuicontroller:$version"
     }
@@ -23,7 +24,6 @@ object Lib {
         const val COMPILER = "androidx.compose.compiler:compiler:$composeVersion"
         const val FOUNDATION = "androidx.compose.foundation:foundation:$composeVersion"
         const val MATERIAL = "androidx.compose.material:material:$composeVersion"
-        const val NAVIGATION = "androidx.navigation:navigation-compose:2.5.0-alpha02"
         const val UI = "androidx.compose.ui:ui:$composeVersion"
         const val UI_PREVIEW = "androidx.compose.ui:ui-tooling-preview:$composeVersion"
     }

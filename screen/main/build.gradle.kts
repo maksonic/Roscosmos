@@ -45,7 +45,7 @@ dependencies {
     implementation(project(Module.CORE))
     implementation(project(Module.Shared.UI))
     implementation(project(Module.Navigation.API))
-    implementation(Lib.Compose.NAVIGATION)
+    implementation(Lib.Accompanist.NAVIGATION_ANIMATION)
     implementation(Lib.Compose.UI)
     implementation(Lib.Compose.MATERIAL)
     implementation(Lib.Compose.UI_PREVIEW)
