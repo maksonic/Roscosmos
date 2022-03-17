@@ -51,7 +51,7 @@ dependencies {
     implementation(project(Screen.SETTINGS))
     implementation(Lib.Accompanist.NAVIGATION_MATERIAL)
     implementation(Lib.Compose.MATERIAL)
-    implementation(Lib.Compose.NAVIGATION)
+    implementation(Lib.Accompanist.NAVIGATION_ANIMATION)
     implementation(Lib.Dagger.VIEWMODEL)
     implementation(Lib.Dagger.HILT)
     kapt(Lib.Dagger.COMPILER)

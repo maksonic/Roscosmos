@@ -1,5 +1,6 @@
 package ru.maksonic.roscosmos.screen.main
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -10,14 +11,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
+import com.google.accompanist.navigation.animation.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.navigation.animation.AnimatedNavHost
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import ru.maksonic.roscosmos.navigation.api.MainRoute
+import ru.maksonic.roscosmos.screen.news.NewsScreen
+import ru.maksonic.roscosmos.screen.space.SpaceScreen
+import ru.maksonic.roscosmos.screen.videos.VideosScreen
 import ru.maksonic.roscosmos.shared.ui.R
 import ru.maksonic.roscosmos.shared.ui.theme.RCTheme
 import ru.maksonic.roscosmos.shared.ui.theme.component.IconButtonPrimary
@@ -25,11 +30,12 @@ import ru.maksonic.roscosmos.shared.ui.theme.component.IconButtonPrimary
 /**
  * @Author: maksonic on 09.03.2022
  */
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun MainScreen(
-    showSettings: () -> Unit
+    showSettings: () -> Unit,
 ) {
-    val navController = rememberNavController()
+    val navController = rememberAnimatedNavController()
 
     Scaffold(
         modifier = Modifier
@@ -39,7 +45,7 @@ fun MainScreen(
         backgroundColor = RCTheme.color.background,
         bottomBar = { MainBottomNavigationBar(navController) }
     ) {
-        NavHost(navController, startDestination = MainRoute.NewsScreen.route) {
+        AnimatedNavHost(navController, startDestination = MainRoute.NewsScreen.route) {
             mainBottomGraph(navController)
         }
     }
@@ -118,8 +124,9 @@ private fun MainBottomNavigationBar(navController: NavController) {
     }
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.mainBottomGraph(
-    navController: NavHostController
+    navController: NavHostController,
 ) {
 
     composable(MainRoute.NewsScreen.route) {
@@ -129,6 +136,6 @@ fun NavGraphBuilder.mainBottomGraph(
         VideosScreen()
     }
     composable(MainRoute.SpaceScreen.route) {
-        SpaceScreen()
+        SpaceScreen(viewModel = hiltViewModel())
     }
 }

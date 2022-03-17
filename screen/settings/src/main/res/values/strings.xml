@@ -8,6 +8,8 @@
     <string name="popup_dark_theme">Тёмная тема</string>
     <string name="popup_rc_theme">Фирменная тема</string>
     <string name="item_change_font_size">Изменить размер текста</string>
+    <string name="txt_scalable_hint">Космонавтика имеет безграничное будущее, её перспективы беспредельны, как сама Вселенная.</string>
+    <string name="txt_scalable_hint_c">(С.П. Королёв)</string>
 
     <string name="header_notification">Уведомления</string>
     <string name="item_notification_live">Прямые трансляции</string>

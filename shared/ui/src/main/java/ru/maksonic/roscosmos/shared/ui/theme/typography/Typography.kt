@@ -2,6 +2,8 @@ package ru.maksonic.roscosmos.shared.ui.theme.typography
 
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
@@ -22,7 +24,7 @@ data class RCTypography(
 
 val typography = RCTypography(
     body = TextStyle(
-        fontSize = 16.sp,
+        fontFamily = FontRC,
         fontWeight = FontWeight.Normal
     ),
     title = TextStyle(
@@ -38,6 +40,7 @@ val typography = RCTypography(
         fontWeight = FontWeight.Medium,
     ),
     display = TextStyle(
+        fontFamily = FontRC,
         fontSize = 34.sp,
         fontWeight = FontWeight.Bold
     ),

@@ -1,11 +1,7 @@
-package ru.maksonic.roscosmos.screen.main
+package ru.maksonic.roscosmos.screen.news
 
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import ru.maksonic.roscosmos.shared.ui.theme.RCTheme
 import ru.maksonic.roscosmos.shared.ui.theme.component.ScreenHeader
 
