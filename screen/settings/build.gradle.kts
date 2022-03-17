@@ -45,8 +45,11 @@ android {
 
 dependencies {
     implementation(project(Module.CORE))
+    implementation(project(Module.DOMAIN))
     implementation(project(Module.Shared.UI))
     implementation(Lib.AndroidX.CORE_KTX)
+    implementation(Lib.AndroidX.DATASTORE)
+    implementation(Lib.Lifecycle.VIEWMODEL_SCOPE)
     implementation(Lib.Compose.UI)
     implementation(Lib.Compose.MATERIAL)
     implementation(Lib.Compose.UI_PREVIEW)

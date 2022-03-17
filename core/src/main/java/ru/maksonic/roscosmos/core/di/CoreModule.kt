@@ -8,6 +8,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import ru.maksonic.roscosmos.core.provider.ResourceProvider
 import ru.maksonic.roscosmos.core.settings.ThemeSetting
+import ru.maksonic.roscosmos.core.settings.FontSizeSetting
 import javax.inject.Singleton
 
 /**
@@ -24,6 +25,11 @@ object CoreModule {
 
     @Singleton
     @Provides
-    fun provideThemeSettings(prefs: ResourceProvider): ThemeSetting =
-        ThemeSetting.ThemeSettingPreference(prefs)
+    fun provideThemeSettings(rp: ResourceProvider): ThemeSetting =
+        ThemeSetting.ThemeSettingPreference(rp)
+
+    @Singleton
+    @Provides
+    fun provideDataBase(@ApplicationContext context: Context, rp: ResourceProvider) : FontSizeSetting =
+        FontSizeSetting.BaseFontSizeSetting(context = context, rp)
 }

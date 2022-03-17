@@ -9,8 +9,6 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.core.view.WindowCompat
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
@@ -47,13 +45,14 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setContent {
             val bottomSheetNavigator = rememberBottomSheetNavigator()
             val navController = rememberAnimatedNavController(bottomSheetNavigator)
-            val darkMode = remember { mutableStateOf(false) }
             val systemTheme = isSystemInDarkTheme()
             val systemController = rememberSystemUiController()
             val appTheme = themeSetting.themeStream.collectAsState()
+
             val roscosmosTheme: @Composable (
                 content: @Composable () -> Unit
             ) -> Unit = when (appTheme.value) {
@@ -81,12 +80,7 @@ class MainActivity : ComponentActivity() {
                             popEnterTransition = { fadeIn() },
                             popExitTransition = { fadeOut() }) {
                             mainGraph(navController)
-                            settingsGraph(
-                                navController,
-                                onThemeSelected = { theme -> themeSetting.theme = theme },
-                                darkMode = darkMode,
-                                themeSetting = themeSetting
-                            )
+                            settingsGraph(navController)
                             mainBottomGraph(navController)
                         }
                     }

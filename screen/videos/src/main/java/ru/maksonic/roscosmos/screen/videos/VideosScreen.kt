@@ -1,4 +1,4 @@
-package ru.maksonic.roscosmos.screen.main
+package ru.maksonic.roscosmos.screen.videos
 
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable

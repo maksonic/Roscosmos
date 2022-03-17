@@ -25,6 +25,14 @@ android {
         }
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Config.composeVersion
+    }
+
     compileOptions {
         sourceCompatibility = Config.javaVersion
         targetCompatibility = Config.javaVersion
@@ -35,6 +43,9 @@ android {
 }
 
 dependencies {
+    implementation(project(Module.CORE))
+    implementation(Lib.AndroidX.DATASTORE)
+    implementation(Lib.Compose.FOUNDATION)
     implementation(Lib.Dagger.HILT)
     kapt(Lib.Dagger.COMPILER)
 }

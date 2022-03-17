@@ -16,6 +16,7 @@ data class RCColor(
     val onPrimary: Color,
     val secondary: Color,
     val secondaryVariant: Color,
+    val tertiary: Color,
     val background: Color,
     val onBackground: Color,
     val surface: Color,

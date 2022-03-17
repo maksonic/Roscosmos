@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -19,6 +20,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import ru.maksonic.roscosmos.navigation.api.MainRoute
+import ru.maksonic.roscosmos.screen.news.NewsScreen
+import ru.maksonic.roscosmos.screen.space.SpaceScreen
+import ru.maksonic.roscosmos.screen.videos.VideosScreen
 import ru.maksonic.roscosmos.shared.ui.R
 import ru.maksonic.roscosmos.shared.ui.theme.RCTheme
 import ru.maksonic.roscosmos.shared.ui.theme.component.IconButtonPrimary
@@ -29,7 +33,7 @@ import ru.maksonic.roscosmos.shared.ui.theme.component.IconButtonPrimary
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun MainScreen(
-    showSettings: () -> Unit
+    showSettings: () -> Unit,
 ) {
     val navController = rememberAnimatedNavController()
 
@@ -122,7 +126,7 @@ private fun MainBottomNavigationBar(navController: NavController) {
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.mainBottomGraph(
-    navController: NavHostController
+    navController: NavHostController,
 ) {
 
     composable(MainRoute.NewsScreen.route) {
@@ -132,6 +136,6 @@ fun NavGraphBuilder.mainBottomGraph(
         VideosScreen()
     }
     composable(MainRoute.SpaceScreen.route) {
-        SpaceScreen()
+        SpaceScreen(viewModel = hiltViewModel())
     }
 }

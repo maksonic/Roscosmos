@@ -8,6 +8,7 @@ object Lib {
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.4.1"
         const val ANNOTATION = "androidx.annotation:annotation:1.3.0"
         const val CORE_KTX = "androidx.core:core-ktx:1.7.0"
+        const val DATASTORE = "androidx.datastore:datastore-preferences:1.0.0"
         const val MATERIAL = "com.google.android.material:material:1.5.0"
     }
 
@@ -37,6 +38,7 @@ object Lib {
 
     object Lifecycle {
         const val RUNTIME_KTX = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0-alpha02"
+        const val VIEWMODEL_SCOPE = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
     }
 
     object Test {
